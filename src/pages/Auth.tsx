@@ -130,7 +130,7 @@ export default function Auth() {
                     <Input
                       id="su-name"
                       type="text"
-                      placeholder="Alex Kumar"
+                      placeholder="Your Name"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       required
@@ -142,7 +142,7 @@ export default function Auth() {
                     <Input
                       id="su-email"
                       type="email"
-                      placeholder="you@college.edu"
+                      placeholder="your_roll@hbtu.ac.in"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
