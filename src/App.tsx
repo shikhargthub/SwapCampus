@@ -8,21 +8,22 @@ import Navbar from "@/components/Navbar";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 // Lazy-load pages for code splitting (faster initial load)
-const Landing     = lazy(() => import("@/pages/Landing"));
-const Auth        = lazy(() => import("@/pages/Auth"));
-const Marketplace = lazy(() => import("@/pages/Marketplace"));
-const ItemDetail  = lazy(() => import("@/pages/ItemDetail"));
-const SellItem    = lazy(() => import("@/pages/SellItem"));
-const MyItems     = lazy(() => import("@/pages/MyItems"));
-const Chat        = lazy(() => import("@/pages/Chat"));
-const Admin       = lazy(() => import("@/pages/Admin"));
-const Profile     = lazy(() => import("@/pages/Profile"));
-const NotFound    = lazy(() => import("@/pages/NotFound"));
+const Landing      = lazy(() => import("@/pages/Landing"));
+const Auth         = lazy(() => import("@/pages/Auth"));
+const EmailConfirm = lazy(() => import("@/pages/EmailConfirm")); // ← NEW
+const Marketplace  = lazy(() => import("@/pages/Marketplace"));
+const ItemDetail   = lazy(() => import("@/pages/ItemDetail"));
+const SellItem     = lazy(() => import("@/pages/SellItem"));
+const MyItems      = lazy(() => import("@/pages/MyItems"));
+const Chat         = lazy(() => import("@/pages/Chat"));
+const Admin        = lazy(() => import("@/pages/Admin"));
+const Profile      = lazy(() => import("@/pages/Profile"));
+const NotFound     = lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 2,      // 2 min cache
+      staleTime: 1000 * 60 * 2,
       retry: 1,
       refetchOnWindowFocus: false,
     },
@@ -46,7 +47,7 @@ function AppShell() {
       <main className="flex-1">
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            <Route path="/home"       element={<Marketplace />} />
+            <Route path="/home"      element={<Marketplace />} />
             <Route path="/"          element={<Navigate to="/home" replace />} />
             <Route path="/item/:id"  element={<ItemDetail />} />
             <Route path="/sell"      element={<SellItem />} />
@@ -99,6 +100,9 @@ function AppRoutes() {
           path="/auth"
           element={user ? <Navigate to="/home" replace /> : <Auth />}
         />
+
+        {/* ── Email confirmation page (public — no auth needed) ── */}
+        <Route path="/confirm" element={<EmailConfirm />} /> {/* ← NEW */}
 
         {/* ── Protected app routes ── */}
         <Route
