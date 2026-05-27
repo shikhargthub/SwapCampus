@@ -18,15 +18,15 @@ import {
 // ─── Marquee items ────────────────────────────────────────────────────────────
 const previewItems = [
   { emoji: "📚", name: "Calculus Textbook", price: "₹350" },
-  { emoji: "💻", name: "MacBook Charger", price: "₹800" },
+  { emoji: "💻", name: "MacBook Charger", price: "₹40000" },
   { emoji: "☕", name: "Coffee Maker", price: "₹1,200" },
   { emoji: "🎒", name: "Campus Backpack", price: "₹600" },
-  { emoji: "🖥️", name: "Study Lamp", price: "₹250" },
+  { emoji: "💡", name: "Study Lamp", price: "₹250" },
   { emoji: "📓", name: "Engineering Notes", price: "₹150" },
-  { emoji: "🎧", name: "Headphones", price: "₹900" },
-  { emoji: "🔋", name: "Power Bank", price: "₹700" },
+  { emoji: "🎧", name: "Headphones", price: "₹1200" },
+  { emoji: "🔋", name: "Power Bank", price: "₹800" },
   { emoji: "📐", name: "Drawing Kit", price: "₹200" },
-  { emoji: "🖨️", name: "Mini Printer", price: "₹2,500" },
+  { emoji: "🖨️", name: "Mini Printer", price: "₹1800" },
 ];
 
 // ─── Feature data ─────────────────────────────────────────────────────────────
@@ -36,7 +36,7 @@ const features = [
     bg: "from-emerald-500/10 to-emerald-500/5",
     border: "border-emerald-500/20",
     title: "Campus Verified",
-    desc: "Sign up with your .edu college email. Only verified students from your campus can join — no random strangers.",
+    desc: "Sign up with your (your_roll_no@hbtu.ac.in)college email. Only verified students from your campus can join — no random strangers.",
   },
   {
     icon: <ArrowLeftRight className="h-6 w-6 text-primary" />,
@@ -101,19 +101,19 @@ const steps = [
 const testimonials = [
   {
     name: "Aarav S.",
-    college: "IIT Kanpur",
+    college: "HBTU-Kanpur",
     avatar: "AS",
     text: "Sold my old DSA book within 2 hours of listing. SwapCampus is insanely fast for campus trades.",
   },
   {
     name: "Priya M.",
-    college: "NIT Allahabad",
+    college: "HBTU-Kanpur",
     avatar: "PM",
     text: "Swapped my graphics tablet for a mechanical keyboard — no money exchanged. This is genius.",
   },
   {
     name: "Rohan K.",
-    college: "BITS Pilani",
+    college: "HBTU-Kanpur",
     avatar: "RK",
     text: "The campus-only thing makes it so much safer than random Facebook groups. Highly recommend.",
   },
