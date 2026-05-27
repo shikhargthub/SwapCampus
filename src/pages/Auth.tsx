@@ -89,7 +89,7 @@ export default function Auth() {
                     <Input
                       id="si-email"
                       type="email"
-                      placeholder="you@college.edu"
+                      placeholder="your_roll_no@hbtu.ac.in"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
@@ -158,7 +158,7 @@ export default function Auth() {
                       <Input
                         id="su-password"
                         type={showPassword ? "text" : "password"}
-                        placeholder="At least 6 characters"
+                        placeholder="Any Atleast 6 characters"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
