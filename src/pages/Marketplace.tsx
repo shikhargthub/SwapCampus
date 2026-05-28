@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";
 import ItemCard from "@/components/ItemCard";
@@ -24,6 +25,7 @@ type SortKey = "newest" | "price_asc" | "price_desc";
 
 export default function Marketplace() {
   const { profile, loading: authLoading } = useAuth();
+  const navigate = useNavigate();
   const [items, setItems] = useState<Item[]>([]);
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
   const [search, setSearch] = useState("");
@@ -234,7 +236,7 @@ export default function Marketplace() {
               {debouncedSearch ? `Try a different search term` : "Be the first to list something on your campus!"}
             </p>
             {!debouncedSearch && (
-              <Button variant="gradient" onClick={() => window.location.href = "/sell"}>
+              <Button variant="gradient" onClick={() => navigate("/sell")}>
                 + List an Item
               </Button>
             )}
